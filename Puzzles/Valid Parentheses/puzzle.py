@@ -25,6 +25,7 @@ class Solution:
     def is_valid(s:str) -> bool:
         pass
 
+
 def main():
 
     assert Solution.is_valid("()") == True

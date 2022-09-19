@@ -27,9 +27,10 @@ class Solution:
     def remove_element(nums:list[int], val:int) -> int:
         pass
 
+
 def main():
     assert Solution.remove_element([3,2,2,3],3) == [2,2]
-    assert Solution.remove_element([0,1,2,2,3,0,4,2],2) == [0,1,4,0,3]
+    assert Solution.remove_element([0,1,2,2,3,0,4,2],2) == [0,1,3,0,4]
     assert Solution.remove_element([0,1,2,3,4,5,6,7,8,9,10],10) == [0,1,2,3,4,5,6,7,8,9]
     assert Solution.remove_element([10],10) == []
     assert Solution.remove_element([0,1,2,3,4,5,6,7,8,9,10],11) == [0,1,2,3,4,5,6,7,8,9,10]

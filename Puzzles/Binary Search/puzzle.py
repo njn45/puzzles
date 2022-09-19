@@ -32,6 +32,7 @@ class Solution:
     def binary_search(nums:list[int], target:int) -> int:
         pass
 
+
 def main():
     assert Solution.binary_search([-1,0,3,5,9,12],9) == 4
     assert Solution.binary_search([-1,0,3,5,9,12],2) == -1

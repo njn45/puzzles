@@ -29,25 +29,31 @@ Constraints:
     strs[i] consists of lowercase English letters.
 
 """
-
 class Solution:
 
     def group_anagrams(strs: list[str]) -> list[list[str]]:
         pass
 
 def main():
-    assert sorted(Solution.group_anagrams(["eat","tea","tan","ate","nat","bat"]), key = len) == [["bat"],["nat","tan"],["ate","eat","tea"]]
-    assert sorted(Solution.group_anagrams([""]), key = len) == [[""]]
-    assert sorted(Solution.group_anagrams(["a"]), key = len) == [["a"]]
-    assert sorted(Solution.group_anagrams(["",""]), key = len) == [["",""]]
-    assert sorted(Solution.group_anagrams(["","b"]), key = len) == [["b"],[""]]
-    assert sorted(Solution.group_anagrams(["c","c"]), key = len) == [["c","c"]]
-    assert sorted(Solution.group_anagrams(["ant","ant"]), key = len) == [["ant","ant"]]
-    assert sorted(Solution.group_anagrams(["and","dan"]), key = len) == [["and","dan"]]
-    assert sorted(Solution.group_anagrams(["","b",""]), key = len) == [["b"],["",""]]
-    assert sorted(Solution.group_anagrams(["","",""]), key = len) == [["","",""]]
-    assert sorted(Solution.group_anagrams(["ape","and","cat"]), key = len) == [["cat"],["and"],["ape"]]
-    assert sorted(Solution.group_anagrams(["ape","pea","tax"]), key = len) == [["tax"],["ape","pea"]]
+
+    def test_func(input,output):
+        input = {tuple(sorted(i)) for i in input}
+        output = {tuple(sorted(j)) for j in output}
+
+        return input == output
+
+    assert test_func(Solution.group_anagrams(["eat","tea","tan","ate","nat","bat"]), [["bat"],["nat","tan"],["ate","eat","tea"]]) == True
+    assert test_func(Solution.group_anagrams([""]), [[""]]) == True
+    assert test_func(Solution.group_anagrams(["a"]), [["a"]]) == True
+    assert test_func(Solution.group_anagrams(["",""]), [["",""]]) == True
+    assert test_func(Solution.group_anagrams(["","b"]), [["b"],[""]]) == True
+    assert test_func(Solution.group_anagrams(["c","c"]), [["c","c"]]) == True
+    assert test_func(Solution.group_anagrams(["ant","ant"]), [["ant","ant"]]) == True
+    assert test_func(Solution.group_anagrams(["and","dan"]), [["and","dan"]]) == True
+    assert test_func(Solution.group_anagrams(["","b",""]), [["b"],["",""]]) == True
+    assert test_func(Solution.group_anagrams(["","",""]), [["","",""]]) == True
+    assert test_func(Solution.group_anagrams(["ape","and","cat"]), [["cat"],["and"],["ape"]]) == True
+    assert test_func(Solution.group_anagrams(["ape","pea","tax"]), [["tax"],["ape","pea"]]) == True
 
 
 if __name__ == "__main__":

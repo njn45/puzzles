@@ -45,6 +45,7 @@ def main():
     assert Solution.is_palindrome("Sir, I demand, I am a maid named Iris.") == True
     assert Solution.is_palindrome("Dammit I'm Mad . . . ") == True
     assert Solution.is_palindrome("()cab()") == False
+    assert Solution.is_palindrome("110011") == True
 
 
 if __name__ == "__main__":
